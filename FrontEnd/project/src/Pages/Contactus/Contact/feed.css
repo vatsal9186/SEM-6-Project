@@ -1,0 +1,124 @@
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Reduced height */
+    background: linear-gradient(135deg, #e3eaf3, #cdd7e4);
+    padding: 20px;
+    width: 1500px;
+}
+
+.feedback-box {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    width: 500px; /* Reduced width */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    margin-bottom: 14px;
+    color: #333;
+    font-size: 20px; /* Reduced font size */
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 12px; /* Reduced spacing */
+    text-align: left;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px; /* Reduced padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #888;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #0056b3;
+    box-shadow: 0px 0px 4px rgba(0, 86, 179, 0.3);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.input-error {
+    border-color: #d9534f !important;
+}
+
+.error-text {
+    color: #d9534f;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+
+.char-counter {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px; /* Reduced padding */
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    transform: scale(1.03);
+}
+
+.submit-btn:active {
+    background: #003366;
+    transform: scale(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .feedback-box {
+        width: 100%; /* Full width for smaller screens */
+        padding: 15px;
+    }
+
+    input,
+    textarea {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .submit-btn {
+        font-size: 13px;
+        padding: 8px;
+    }
+}

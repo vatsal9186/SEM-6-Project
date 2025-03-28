@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  footer {
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 60px 20px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-links {
+    flex: 1;
+    /* margin-right: 50px; */
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .footer-links li {
+    position: relative;
+  }
+  
+  .footer-link {
+    color: #6c757d;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #007bff;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .dropdown-content a {
+    color: #6c757d;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .footer-info {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .footer-title {
+    font-size: 32px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .footer-address,
+  .footer-contact {
+    color: #6c757d;
+    margin: 5px 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .social-media {
+    margin-top: 20px;
+  }
+  
+  .social-icon {
+    color: #6c757d;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #007bff;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #e9ecef;
+    color: #6c757d;
+    margin-top: 20px;
+    border-top: 1px solid #ced4da;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-info {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .footer-links ul {
+      justify-content: center;
+    }
+  }
+  
