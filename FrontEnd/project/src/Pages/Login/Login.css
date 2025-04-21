@@ -113,3 +113,26 @@
     text-decoration: underline;
   }
   
+  /* A_login link */
+  .a-login {
+    margin-top: 12px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+  }
+  
+  .a-login a {
+    color: #a869cf;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .a-login a:hover {
+    color: #9976c1;
+    text-decoration: underline;
+  }
+  
+  /* .SPAN{
+    font-size: 17px;
+  } */

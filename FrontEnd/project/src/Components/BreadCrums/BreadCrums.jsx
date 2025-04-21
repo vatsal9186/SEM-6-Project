@@ -6,12 +6,13 @@ import './BreadCrums.css';
 
 const BreadCrums = (props) => {
     const { Product } = props;
+    console.log(Product);
   return (
     <>
     <div className='breadcrum'>
         HOME <img src={arrowicon} alt="" />
         SHOP <img src={arrowicon} alt="" />
-        {Product.category}<img src={arrowicon} alt="" />{Product.name}
+        {/* {Product.category}<img src={arrowicon} alt="" />{Product.name} */}
     </div>
     </>
   )

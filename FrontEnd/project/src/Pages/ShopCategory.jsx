@@ -1,33 +1,55 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { all_prod } from '../assets/product';
-
-
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { Items } from '../Components/items/Items';
 import './ShopCategory.css';
 import Logo from './Home/LOGO/Logo';
 
 export const ShopCategory = (props) => {
+  const [products, setProducts] = useState([]);
+
+  const fetchProductsByCategory = async () => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/products/category/${props.category}`);
+      const data = await response.json();
+      setProducts(data);
+      console.log('Products by category:', data);
+    } catch (error) {
+      console.error('Error fetching category products:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProductsByCategory();
+  }, [props.category]); // Fetch again if category changes
+
   return (
     <>
-    <Logo />
-      <div className="shop_cat_prod" style={{display: 'flex', flexWrap: 'wrap', background:' linear-gradient(to right, #a8c0ff, #3f2b96)' ,justifyContent: 'center', gap: '20px', padding: '20px', borderRadius: '10px', boxShadow: '0 0 10px rgba(0,0,0,0.1)', marginTop: '20px', marginBottom: '20px', marginLeft: '20px', marginRight: '20px'}}> 
-        {
-          all_prod.map((item, i) => {
-              if(props.category === item.category){
-                return(
-                  <Items key={i} id={item.id} image={item.image} name={item.name} price={item.price} category={item.category} specs={item.specs} />
-                );
-              }
-              else{
-                return null;
-              }
-          })
-        }
+      <Logo />
+      <div
+        className="shop_cat_prod"
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '20px',
+          padding: '20px',
+        }}
+      >
+        {products.map((item, i) => (
+          <Items
+            key={item._id || i}
+            id={item._id}
+            image={item.image}
+            name={item.name}
+            price={item.price}
+            category={item.category}
+            specs={item.specs}
+          />
+        ))}
       </div>
     </>
-  )
-}
+  );
+};
 
 export default ShopCategory;

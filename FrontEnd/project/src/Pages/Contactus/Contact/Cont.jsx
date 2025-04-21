@@ -5,13 +5,12 @@ import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 
 const Cont = () => {
   return (
-    <>
     <div className="contact-container">
-      <div className="contact-info">
-        <h2>Do you have some questions?</h2>
-        <p>We are at your disposal 7 days a week!</p>
+      <div className="contact-card">
+        <h2>Got Questions?</h2>
+        <p className="subtext">We re available 7 days a week!</p>
         <address>
-        K.K Market, Opp of K.M Kothari High-School, SATLASANA<br />
+          K.K Market, Opp of K.M Kothari High-School, SATLASANA<br />
           MEHSANA, GUJARAT <br />
           INDIA
         </address>
@@ -24,21 +23,7 @@ const Cont = () => {
           <a href="#"><FaInstagram /></a>
         </div>
       </div>
-
-      <div className="contact-form">
-        <form>
-          <div className="form-group">
-            <input type="text" placeholder="Name *" required />
-            <input type="email" placeholder="E-mail *" required />
-          </div>
-          <input type="text" placeholder="Subject *" required />
-          <textarea placeholder="Message"></textarea>
-          <button type="submit" className="btn">SEND MESSAGE</button>
-        </form>
-        {/* <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> */}
-      </div>
     </div>
-    </>
   );
 };
 

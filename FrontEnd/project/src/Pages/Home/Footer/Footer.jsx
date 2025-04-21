@@ -31,7 +31,7 @@ export const Footer = () => {
               </div>
             </li>
             <li><a href={"/Cont"} className="footer-link">Contact Us</a></li>
-            <li><a href="#" className="footer-link">Login</a></li>
+            <li><a href="/login" className="footer-link">Login</a></li>
           </ul>
         </div>
 

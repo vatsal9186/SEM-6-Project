@@ -12,6 +12,19 @@ const Productdisp = (props) => {
     return <div>Product data is not available.</div>; // Fallback for missing product data
   }
 
+  console.log("hello", Product);
+
+  const handleAddToCart = (id) => {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if(!user) {
+        alert("Please login to add items to the cart.");
+        return;
+      }
+      const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+      localStorage.setItem("cartItems", JSON.stringify([...cartItems, Product]));
+      alert("Product added to cart successfully!");
+  }
+
   return (
     <div className="productdis" style={{ display: "flex" }}>
       <div className="productdis-left">
@@ -24,7 +37,7 @@ const Productdisp = (props) => {
         <h1>{Product.name}</h1>
 
         <div className="product-price">₹{Product.price}</div>
-        <div className="productdis-right-descr">{Product.Additional}</div>
+        <div className="productdis-right-descr">{Product.additional}</div>
         <h2>About this Item</h2>
         <div className="productdis-right-descr more">
           Upgrade your lifestyle with smart home and personal electronics
@@ -36,8 +49,7 @@ const Productdisp = (props) => {
           offer seamless performance, bringing innovation and smart technology
           into your home.
         </div>
-
-        <button>ADD TO CART</button>
+        <button onClick={handleAddToCart}>ADD TO CART</button>
       </div>
     </div>
   );

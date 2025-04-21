@@ -165,6 +165,27 @@ import A24 from './A2_12.png';
 
 
 
+// import H1 from './a_c.png';
+// import H3 from './AC.png';
+// import H5 from './h_p.png';
+// import H7 from './i16.png';
+// import H9 from './laptop.png';
+// import H11 from './refri.png';
+// import H13 from './Samsungs25.png';
+// import H14 from './t_v.png';
+// import H16 from './Wash.png';
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -174,37 +195,47 @@ import A24 from './A2_12.png';
 export const all_prod = [
 
 
+
+
+
+
+
+
+
+
+
+
     // LAPTOPS
-    { id: 1, name: "MacBook Pro 13.3", category: "Laptops", specs: "16GB RAM / 512GB SSD / M1 Chip", price: 150000.00 , image: L1, Additional: 'Apple 2024 MacBook Pro Laptop with M4 chip with 10-core CPU and 10-core GPU: Built for Apple Intelligence, 35.97 cm (14.2") Liquid Retina XDR Display, 16GB Unified Memory, 512GB SSD Storage; Silver' },
-    { id: 2, name: "MacBook Air 15", category: 'Laptops', specs: 'Apple M3 / 16GB RAM / 512GB SSD', price: 80000.00 , image: L2, Additional: 'Apple 2024 MacBook Air 15" Laptop with M3 chip: 38.91 cm (15.3") Liquid Retina Display, 16GB Unified Memory, 512GB SSD Storage, Backlit Keyboard, 1080p FaceTime HD Camera, Touch ID- Midnight Blue' },
-    { id: 3, name: 'DELL XPS 13', category: 'Laptops', specs: 'Intel Core i7 8th Gen / 16GB RAM / 1TB SSD', price: 90000.00 , image: L3, Additional: 'Dell XPS 13 Laptop, On-Device A1 with Copilot+, 12 Core Snapdragon X Elite (Dual Core Boost), 13" (33.02cm) FHD+ 30-120Hz 500 nit, 16GB + 512GB,Qualcomm NPU 45 TOPS, Backlit KB + FPR, Graphite, 1.19kg' },
-    { id: 4, name: 'Acer Swift 3', category: 'Laptops', specs: 'Intel Core i5 / 8GB RAM / 512GB SSD', price: 65000.00 , image: L4, Additional: 'Acer Aspire 3 Intel Core i5-1 2351J Processor Laptop with 35.56 cm (14") FHD LED-Backlit IPS Display (16GB RAM/512GB SSD/WiFi 6/1ntel Graphics/ Win11 Home) A324-51, Backlit Keyboard, Steel Gray, 1.45KG' },
-    { id: 5, name: 'Dell Inspiron 15', category: 'Laptops', specs: 'Ryzen 7 / 16GB RAM / 512GB SSD / Full HD Display', price: 88000.00 , image: L5, Additional: 'Dell Inspiron 15 3530 Laptop - Powerful 15.6 inch FHD (39.62cm) Display, Intel Core R7-5700H, 16 GB RAM, 512 GB SSD, Windows 11 Home, Platinum Silver, Thin and Light, Ideal for Data Mavens' },
-    { id: 6, name: 'HP Pavilion x360', category: 'Laptops', specs: '12th Gen Intel i5 / 8GB RAM / 512GB SSD / Touchscreen', price: 70000.00 , image: L6, Additional: 'HP Pavilion x360, 13th Gen Intel Core i5-1335U,16GB DDR4, 512GB SSD, (Win11,0ffice 21, Silver, 1.51 kg), Touchscreen, 14-inch(35.6cm), FHD Laptop, Iris Xe, FPR, 5MP Camera, Backlit KB, Pen, eki074TU' },
-    { id: 7, name: 'Lenovo ThinkPad X1 Carbon', category: 'Laptops', specs: 'Intel i7 / 16GB RAM / 512GB SSD / Ultra Lightweight', price: 120000.00 , image: L7, Additional: 'Lenovo ThinkPad Xl Carbon 6th Gen Intel Core i5 Slim & Light Business Laptop (8 GB RAM/ 256GB SSD/14" (35.6 cm) HD/WindowsII/MSOffice/ WiFi/Bluetooth/Webcam/lntegrated Graphics)' },
+    { id: 1, name: "MacBook Pro 13.3", category: "Laptops", specs: "16GB RAM / 512GB SSD / M1 Chip", price: 150000.00, image: L1, Additional: 'Apple 2024 MacBook Pro Laptop with M4 chip with 10-core CPU and 10-core GPU: Built for Apple Intelligence, 35.97 cm (14.2") Liquid Retina XDR Display, 16GB Unified Memory, 512GB SSD Storage; Silver' },
+    { id: 2, name: "MacBook Air 15", category: 'Laptops', specs: 'Apple M3 / 16GB RAM / 512GB SSD', price: 80000.00, image: L2, Additional: 'Apple 2024 MacBook Air 15" Laptop with M3 chip: 38.91 cm (15.3") Liquid Retina Display, 16GB Unified Memory, 512GB SSD Storage, Backlit Keyboard, 1080p FaceTime HD Camera, Touch ID- Midnight Blue' },
+    { id: 3, name: 'DELL XPS 13', category: 'Laptops', specs: 'Intel Core i7 8th Gen / 16GB RAM / 1TB SSD', price: 90000.00, image: L3, Additional: 'Dell XPS 13 Laptop, On-Device A1 with Copilot+, 12 Core Snapdragon X Elite (Dual Core Boost), 13" (33.02cm) FHD+ 30-120Hz 500 nit, 16GB + 512GB,Qualcomm NPU 45 TOPS, Backlit KB + FPR, Graphite, 1.19kg' },
+    { id: 4, name: 'Acer Swift 3', category: 'Laptops', specs: 'Intel Core i5 / 8GB RAM / 512GB SSD', price: 65000.00, image: L4, Additional: 'Acer Aspire 3 Intel Core i5-1 2351J Processor Laptop with 35.56 cm (14") FHD LED-Backlit IPS Display (16GB RAM/512GB SSD/WiFi 6/1ntel Graphics/ Win11 Home) A324-51, Backlit Keyboard, Steel Gray, 1.45KG' },
+    { id: 5, name: 'Dell Inspiron 15', category: 'Laptops', specs: 'Ryzen 7 / 16GB RAM / 512GB SSD / Full HD Display', price: 88000.00, image: L5, Additional: 'Dell Inspiron 15 3530 Laptop - Powerful 15.6 inch FHD (39.62cm) Display, Intel Core R7-5700H, 16 GB RAM, 512 GB SSD, Windows 11 Home, Platinum Silver, Thin and Light, Ideal for Data Mavens' },
+    { id: 6, name: 'HP Pavilion x360', category: 'Laptops', specs: '12th Gen Intel i5 / 8GB RAM / 512GB SSD / Touchscreen', price: 70000.00, image: L6, Additional: 'HP Pavilion x360, 13th Gen Intel Core i5-1335U,16GB DDR4, 512GB SSD, (Win11,0ffice 21, Silver, 1.51 kg), Touchscreen, 14-inch(35.6cm), FHD Laptop, Iris Xe, FPR, 5MP Camera, Backlit KB, Pen, eki074TU' },
+    { id: 7, name: 'Lenovo ThinkPad X1 Carbon', category: 'Laptops', specs: 'Intel i7 / 16GB RAM / 512GB SSD / Ultra Lightweight', price: 120000.00, image: L7, Additional: 'Lenovo ThinkPad Xl Carbon 6th Gen Intel Core i5 Slim & Light Business Laptop (8 GB RAM/ 256GB SSD/14" (35.6 cm) HD/WindowsII/MSOffice/ WiFi/Bluetooth/Webcam/lntegrated Graphics)' },
     { id: 8, name: 'Microsoft Surface Laptop 4', category: 'Laptops', specs: 'Ryzen 5 / 16GB RAM / 256GB SSD / Touchscreen', price: 98000.00, image: L8, Additional: 'Microsoft Surface Laptop 4 AMD RyzenTM 7 4980U 15 inch Touchscreen Laptop (8GB/256GB SSD/Windows 1 1Home /AMD RadeonTM RX vega 11 Graphics/Platinum/1.542 kg- 5Ul-00023)' },
     { id: 9, name: 'Razer Blade 15', category: 'Laptops', specs: 'Intel i7 / 16GB RAM / 512GB SSD / RTX 3070', price: 150000.00, image: L9, Additional: 'Razer Blade 15 Base 2021 Intel Core i7-10750H 6 Core 15.6 inches Business, Gaming Laptop (FHD LED 1080p 144Hz, 16GB, 512GB SSD, NVIDIA GeForce RTX 3060 Graphics, Windows 10 Home - CNC Aluminum, Chroma RGB Lighting, Thunderbolt 3, 2.09 kg)' },
     { id: 10, name: 'ASUS ROG Zephyrus G14', category: 'Laptops', specs: 'AMD Ryzen 9 / 16GB RAM / 1TB SSD / RTX 3060', price: 145000.00, image: L10, Additional: 'ASUS ROG Zephyrus G14, Gaming Laptop, 14" 3K OLED 120Hz 500nits, AMD Ryzen 9 8945HS Processor, (16GB RAM/ITB SSD/NVIDIA GeForce RTX 4060/ Windows 11/0ffice Home/EclipseGrey/l .5 kg), GA403UV-QS086WS' },
-    { id: 11, name: 'Samsung Galaxy Book2 Pro', category: 'Laptops', specs: 'Intel i7 / 16GB RAM / 512GB SSD / AMOLED Display', price: 110000.00 , image: L11, Additional: 'Samsung Galaxy Book2 Pro 360 Intel 12th Gen i5 EvoTM 33.78 cm (13.3) Touchscreen 2-in-l AMOLED Thin & Light Laptop (16 GB/512 GB SSD/ Windows 11/MS Office/with S Pen/Silver/1.04Kg), NP930QED-KB31N' },
-    { id: 12, name: 'ASUS TUF Gaming F15', category: 'Laptops', specs: 'Intel i5 / 16GB RAM / 512GB SSD / GTX 1650', price: 85000.00 , image: L12, Additional: 'ASUS TUF Gaming F15 (2022), Intel Core i5-12500H 12th Gen, 15.6" (39.62cm) FHD, Gaming Laptop (16GB/512GB/4GB NVIDIA GeForce RTX 3050 /Win11/1 -Zone RGB Backlit KB/90WHr/Gray/2.2 kg), FX507ZC4-HN116W' },
-    { id: 13, name: 'Asus ROG Strix Scar 15', category: 'Laptops', specs: 'AMD Ryzen 9, 16GB RAM, 1TB SSD, RTX 3070', price: 150000.00 , image: L13, Additional: 'ASUS ROG Strix Scar 15 (2020), 15.6" FHD 300Hz/3ms, Intel Core i9-10980HK 10th Gen, RTX 2070 Super GDDR6 8GB Graphics, Gaming Laptop (32GB/2TB RAID SSD/Windows 10/Black/2.35 Kg),G532LWS-HF091T' },
-    { id: 14, name: 'Lenovo Legion 5 Pro', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 1TB SSD, RTX 3060', price: 140000.00 , image: L14, Additional: 'Lenovo Legion Pro 5 Intel Core i7-14650HX 1 6" (40.64cm) WQXGA IPS 500Nits 240Hz Gaming Laptop(16GB/1TB SSD/Win 11/Office 2021/NVlDlA RTX 4060 8GB/1000/0 DCI- P3/3 Month Game Pass/Grey/2.5Kg)' },
-    { id: 15, name: 'Acer Nitro 5', category: 'Laptops', specs: 'Intel Core i5, 8GB RAM, 512GB SSD, GTX 1650', price: 90000.00 , image: L15, Additional: 'Acer Nitro V Gaming Laptop 13th Gen Intel Core i5-13420H with RTX 4050 Graphics, (16GB DDR5/512GB SSD/Windows 11 Home/Wi-Fi(39.6cms) FHD ANVI 5-51' },
-    { id: 16, name: 'Microsoft Surface Laptop', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 512GB SSD, RTX 3050', price: 150000.00 , image: L16, Additional: 'Microsoft New Surface Pr09 13" Intel evo 12 Gen i7 / 16GB / 512GB Graphite with Bluetooth,Wi-Fi,NFC,Windows 1 1 Home, 365 Family 30-Day Trial & Xbox Game Pass Ultimate 30-Day Trial' },
-    { id: 17, name: 'ASUS ZenBook 14', category: 'Laptops', specs: 'Intel Core i5, 16GB RAM, 512GB SSD', price: 85000.00 , image: L17, Additional: 'ASUS Zenbook 14, 14" 3K (2880 x 1800) OLED, Touch Screen,lntel Core Ultra 9, (32GB RAM/I TB/lntel Arc iGPU/Windows II/MS Office 365 Basic(1Year)*/Office Home 2024/Foggy Silver/l .28' },
-    { id: 18, name: 'Dell XPS 15', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 1TB SSD', price: 150000.00 , image: L18, Additional: 'New Dell XPS 15 9500 15.6 inch UHD+ Touchscreen Laptop (Silver) Intel Core i7-10750H 10th Gen, 16GB DDR4 RAM, ITB SSD, Nvidia GTX 1650 Ti with 4GB GDDR6, Window 10 Pro (XPS9500-7845SLV-PUS)' },
-    { id: 19, name: 'HP Spectre x360', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 512GB SSD, Touchscreen', price: 150000.00 , image: L19, Additional: 'HP Spectre x360 A1 Laptop, Intel Ultra 7 155H, 12 TOPS, 32GB DDR5, 2TB SSD,(Win 11, Office 21, Black, 2kg), Touchscreen, 2.8K, OLED, 16- inch(40.6cm), Intel Arc graphics, 9MP camera, Backlit, aa0665TU' },
-    { id: 20, name: 'LG Gram 16', category: 'Laptops', specs: 'Intel Core i5, 16GB RAM, 512GB SSD', price: 125000.00 , image: L20, Additional: 'LG Electronics Gram360 16-" Intel 13Thgen Evo 17-1360P IPS Gorilla Glare Touch Screen/ 16Gb Lpddr5 Ram/ IT b Ssd/lntel Iris Xe Graphic/Wqxga/Ultra-Light 1.48Kg/Face-Login/with Stylus Pen- Windows 11 Home' },
-    { id: 21, name: 'Razer Blade 14', category: 'Laptops', specs: 'AMD Ryzen 9, 16GB RAM, 1TB SSD, RTX 3080', price: 150000.00 , image: L21, Additional: 'Razer Blade 14 AMD Ryzen 9 5900HX 8 Core 14 inches QHD 165Hz Gaming Laptop (16GB RAM, ITB SSD, NVIDIA GeForce RTX 3070 - CNC Aluminum - Chroma RGB,Windows 10 Home, THX Spatial Audio - Vapor Chamber Cooling), 1.77kg' },
-    { id: 22, name: 'Apple MacBook Air M2', category: 'Laptops', specs: 'Apple M2, 16GB RAM, 512GB SSD', price: 130000.00 , image: L22, Additional: 'Apple MacBook Air Laptop with M2 chip: 34.46 cm (13.6-inch) Liquid Retina Display, 8GB RAM, 512GB SSD Storage, Backlit Keyboard, 1080p FaceTime HD Camera. Works with iPhone/iPad; Space Grey' },
-    { id: 23, name: 'Samsung Galaxy Book Flex', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 512GB SSD, Touchscreen', price: 120000.00 , image: L23, Additional: 'Samsung - Galaxy Book Flex2 Alpha 13.3" QLED Touch-Screen Laptop - Intel Core i7-1165G7-16GB Memory - 512GB SSD - Mystic Black' },
-    { id: 24, name: 'MSI Stealth 15M', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 1TB SSD, RTX 3060', price: 150000.00 , image: L24, Additional: 'MSI Stealth 15, Intel 13th Gen. i7- 13620H, 40CM FHD 144Hz Gaming Laptop (16GB/1TB NVMe SSD/Windows 1 1 Home/Nvidia GeForce RTX4050, 6GB GDDR6/Black/2.1 Kg), A13VE-0341N' },
+    { id: 11, name: 'Samsung Galaxy Book2 Pro', category: 'Laptops', specs: 'Intel i7 / 16GB RAM / 512GB SSD / AMOLED Display', price: 110000.00, image: L11, Additional: 'Samsung Galaxy Book2 Pro 360 Intel 12th Gen i5 EvoTM 33.78 cm (13.3) Touchscreen 2-in-l AMOLED Thin & Light Laptop (16 GB/512 GB SSD/ Windows 11/MS Office/with S Pen/Silver/1.04Kg), NP930QED-KB31N' },
+    { id: 12, name: 'ASUS TUF Gaming F15', category: 'Laptops', specs: 'Intel i5 / 16GB RAM / 512GB SSD / GTX 1650', price: 85000.00, image: L12, Additional: 'ASUS TUF Gaming F15 (2022), Intel Core i5-12500H 12th Gen, 15.6" (39.62cm) FHD, Gaming Laptop (16GB/512GB/4GB NVIDIA GeForce RTX 3050 /Win11/1 -Zone RGB Backlit KB/90WHr/Gray/2.2 kg), FX507ZC4-HN116W' },
+    { id: 13, name: 'Asus ROG Strix Scar 15', category: 'Laptops', specs: 'AMD Ryzen 9, 16GB RAM, 1TB SSD, RTX 3070', price: 150000.00, image: L13, Additional: 'ASUS ROG Strix Scar 15 (2020), 15.6" FHD 300Hz/3ms, Intel Core i9-10980HK 10th Gen, RTX 2070 Super GDDR6 8GB Graphics, Gaming Laptop (32GB/2TB RAID SSD/Windows 10/Black/2.35 Kg),G532LWS-HF091T' },
+    { id: 14, name: 'Lenovo Legion 5 Pro', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 1TB SSD, RTX 3060', price: 140000.00, image: L14, Additional: 'Lenovo Legion Pro 5 Intel Core i7-14650HX 1 6" (40.64cm) WQXGA IPS 500Nits 240Hz Gaming Laptop(16GB/1TB SSD/Win 11/Office 2021/NVlDlA RTX 4060 8GB/1000/0 DCI- P3/3 Month Game Pass/Grey/2.5Kg)' },
+    { id: 15, name: 'Acer Nitro 5', category: 'Laptops', specs: 'Intel Core i5, 8GB RAM, 512GB SSD, GTX 1650', price: 90000.00, image: L15, Additional: 'Acer Nitro V Gaming Laptop 13th Gen Intel Core i5-13420H with RTX 4050 Graphics, (16GB DDR5/512GB SSD/Windows 11 Home/Wi-Fi(39.6cms) FHD ANVI 5-51' },
+    { id: 16, name: 'Microsoft Surface Laptop', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 512GB SSD, RTX 3050', price: 150000.00, image: L16, Additional: 'Microsoft New Surface Pr09 13" Intel evo 12 Gen i7 / 16GB / 512GB Graphite with Bluetooth,Wi-Fi,NFC,Windows 1 1 Home, 365 Family 30-Day Trial & Xbox Game Pass Ultimate 30-Day Trial' },
+    { id: 17, name: 'ASUS ZenBook 14', category: 'Laptops', specs: 'Intel Core i5, 16GB RAM, 512GB SSD', price: 85000.00, image: L17, Additional: 'ASUS Zenbook 14, 14" 3K (2880 x 1800) OLED, Touch Screen,lntel Core Ultra 9, (32GB RAM/I TB/lntel Arc iGPU/Windows II/MS Office 365 Basic(1Year)*/Office Home 2024/Foggy Silver/l .28' },
+    { id: 18, name: 'Dell XPS 15', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 1TB SSD', price: 150000.00, image: L18, Additional: 'New Dell XPS 15 9500 15.6 inch UHD+ Touchscreen Laptop (Silver) Intel Core i7-10750H 10th Gen, 16GB DDR4 RAM, ITB SSD, Nvidia GTX 1650 Ti with 4GB GDDR6, Window 10 Pro (XPS9500-7845SLV-PUS)' },
+    { id: 19, name: 'HP Spectre x360', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 512GB SSD, Touchscreen', price: 150000.00, image: L19, Additional: 'HP Spectre x360 A1 Laptop, Intel Ultra 7 155H, 12 TOPS, 32GB DDR5, 2TB SSD,(Win 11, Office 21, Black, 2kg), Touchscreen, 2.8K, OLED, 16- inch(40.6cm), Intel Arc graphics, 9MP camera, Backlit, aa0665TU' },
+    { id: 20, name: 'LG Gram 16', category: 'Laptops', specs: 'Intel Core i5, 16GB RAM, 512GB SSD', price: 125000.00, image: L20, Additional: 'LG Electronics Gram360 16-" Intel 13Thgen Evo 17-1360P IPS Gorilla Glare Touch Screen/ 16Gb Lpddr5 Ram/ IT b Ssd/lntel Iris Xe Graphic/Wqxga/Ultra-Light 1.48Kg/Face-Login/with Stylus Pen- Windows 11 Home' },
+    { id: 21, name: 'Razer Blade 14', category: 'Laptops', specs: 'AMD Ryzen 9, 16GB RAM, 1TB SSD, RTX 3080', price: 150000.00, image: L21, Additional: 'Razer Blade 14 AMD Ryzen 9 5900HX 8 Core 14 inches QHD 165Hz Gaming Laptop (16GB RAM, ITB SSD, NVIDIA GeForce RTX 3070 - CNC Aluminum - Chroma RGB,Windows 10 Home, THX Spatial Audio - Vapor Chamber Cooling), 1.77kg' },
+    { id: 22, name: 'Apple MacBook Air M2', category: 'Laptops', specs: 'Apple M2, 16GB RAM, 512GB SSD', price: 130000.00, image: L22, Additional: 'Apple MacBook Air Laptop with M2 chip: 34.46 cm (13.6-inch) Liquid Retina Display, 8GB RAM, 512GB SSD Storage, Backlit Keyboard, 1080p FaceTime HD Camera. Works with iPhone/iPad; Space Grey' },
+    { id: 23, name: 'Samsung Galaxy Book Flex', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 512GB SSD, Touchscreen', price: 120000.00, image: L23, Additional: 'Samsung - Galaxy Book Flex2 Alpha 13.3" QLED Touch-Screen Laptop - Intel Core i7-1165G7-16GB Memory - 512GB SSD - Mystic Black' },
+    { id: 24, name: 'MSI Stealth 15M', category: 'Laptops', specs: 'Intel Core i7, 16GB RAM, 1TB SSD, RTX 3060', price: 150000.00, image: L24, Additional: 'MSI Stealth 15, Intel 13th Gen. i7- 13620H, 40CM FHD 144Hz Gaming Laptop (16GB/1TB NVMe SSD/Windows 1 1 Home/Nvidia GeForce RTX4050, 6GB GDDR6/Black/2.1 Kg), A13VE-0341N' },
 
 
 
 
     // TV'S
-    { id: 25, name: 'Samsung 108 cm (43 inch)', category: 'TV', specs: 'LED TV with HDMI support',  price: '24000', image: T1, Additional : 'Samsung 108 cm (43 inches) D Series Brighter Crystal 4K Vivid Pro Ultra HD Smart LED TV UA43DUE77AKLXL (Black)' },
+    { id: 25, name: 'Samsung 108 cm (43 inch)', category: 'TV', specs: 'LED TV with HDMI support', price: '24000', image: T1, Additional: 'Samsung 108 cm (43 inches) D Series Brighter Crystal 4K Vivid Pro Ultra HD Smart LED TV UA43DUE77AKLXL (Black)' },
     { id: 26, name: 'Skywall 107.86 cm (43 inch)', category: 'TV', specs: 'SMART TV with BLUE TOOTH ', price: '22000', image: T2, Additional: 'Skywall 109 cm (43 inches) Playwall Frameless Series Full HD Android Smart LED TV VW43F2 (Black)' },
     { id: 27, name: 'Redmi Xiaomi 80 cm (32 inch)', category: 'TV', specs: 'ANDROID TV', price: 15000, image: T3, Additional: 'Redmi Xiaomi 80 cm (32 inches) F Series HD Ready Smart LED Fire TV L32MA-FVIN (Black)' },
     { id: 28, name: 'LG 80 cm (32 inch)', category: 'TV', specs: 'ANDROID TV WITH DOLBY ATMOS', price: 13000, image: T4, Additional: 'LG 80 cm (32 inches) HD Ready Smart LED TV 32LM563BPTC (Dark Iron Gray)' },
@@ -341,6 +372,27 @@ export const all_prod = [
     { id: 143, name: "HAIER 1 TON", category: "AC", specs: "Inverter Split AC 5 Star", price: 50000, image: A23, Additional: "Haier Victory 5 in 1 Convertible 1 Ton 3 Star Triple Inverter Split AC" },
     { id: 144, name: "SAMSUNG 1.5 TON", category: "AC", specs: "Inverter Split AC 5 Star", price: 40000, image: A24, Additional: "Samsung 1.5 Ton 5 Star (5-in-1 Convertible Cooling, AR18CYNZABE, Stabilizer Free Operation, Copper, Inverter Split AC, White" },
 
+
+
+
+
+
+    //HOME PAGE PHOTOS 
+    // { id: 145, name: "LG TV 65 Inch LED 4K Ultra HD Smart TV", category: "TV", specs: "SMART TV WITH ANDROID 13", price: 60000, image: H14, Additional: "" },
+    // { id: 146, name: "Asus VivoBook 15 Core i5 10th Gen - (8 GB/1 TB HDD/Windows 10 Home)", category: "Laptops", specs: "intel i5 10th gen", price: 50000, image: H9, Additional: "" },
+    // { id: 147, name: "Lloyd 1.5 Ton 5 Star Inverter Split AC", category: "AC", specs: "Inverter Split AC 3 Star", price: 40000, image: H3, Additional: "" },
+    // { id: 148, name: "Samsung Galaxy S25 Ultra 5G", category: "Mobile", specs: "Snapdragon 8 Elite", price: 120000, image: H13, Additional: "" },
+    // { id: 149, name: "HP laptop i3-10th Gen", category: "Laptops", specs: "Hp Laptop i3-10th genration, 8-512", price: 40000, image: H5, Additional: "" },
+    // { id: 150, name: "iPhone 16 Pro Max 512 GB", category: "Mobile", specs: "A18 Bionic Chip", price: 160000, image: H7, Additional: "" },
+    // { id: 151, name: "LG 6.5 kg Inverter Fully-Automatic", category: "Wash", specs: "Fully Automatic WashingMachine", price: 30000, image: H16, Additional: "" },
+    // { id: 152, name: "Blue Star 1.5 Ton 3 Star, 60 Months Warranty", category: "AC", specs: "Wi-fi smart converter AC", price: 35000, image: H1, Additional: "" },
+    // { id: 153, name: "Samsung 192 L Direct Cool Single Door 4 Star Refrigerator", category: "Refrigerator", specs: "Single Door Refrigerator", price: 95000, image: H11, Additional: "" },
+    // { id: 154, name: "", category: "", specs: "", price: 0, image: H10, Additional: ""},
+    // { id: 155, name: "", category: "", specs: "", price: 0, image: H11, Additional: "" },
+    // { id: 156, name: "", category: "", specs: "", price: 0, image: H12, Additional: "" },
+    // { id: 157, name: "", category: "", specs: "", price: 0, image: H13, Additional: "" },
+    // { id: 158, name: "", category: "", specs: "", price: 0, image: H14, Additional: "" },
+    // { id: 159, name: "", category: "", specs: "", price: 0, image: H15, Additional: "" },
 
 
 

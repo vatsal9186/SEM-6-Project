@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Header.css";
 import { FaUser, FaShoppingCart } from "react-icons/fa";
+import { IoLogOut } from "react-icons/io5";
 
 const productList = [
   { id: 1, name: "TV", category: "Electronics"},
@@ -19,6 +20,7 @@ function Header() {
   const [query, setQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [cartCount, setCartCount] = useState(0);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const results = productList.filter((product) =>
@@ -26,6 +28,17 @@ function Header() {
     );
     setFilteredProducts(results);
   }, [query]);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+  };
 
   return (
     <>
@@ -42,7 +55,7 @@ function Header() {
               <li><Link to="/TV">TV</Link></li>
               <li><Link to="/Refrigerator">Refrigerator</Link></li>
               <li><Link to="/Laptops">Laptop</Link></li>
-              <li><Link to="/Mobile">SmartPhone</Link></li>
+              <li><Link to="/Mobiles">Mobile</Link></li>
               <li><Link to="/AC">AC</Link></li>
               <li><Link to="/Wash">Washing Machine</Link></li>
             </ul>
@@ -57,9 +70,21 @@ function Header() {
           <button className="search-btn">Search</button>
         </div>
         <div className="account-info">
-          <Link to="/login" className="login">
+          {user ? (
+            <>
+              <span className="user-name">Hello, {user.fullName}</span>
+              <Link to="/login" className="login" onClick={handleLogout}>
+              <IoLogOut className="icon" /> <span>Logout</span>
+              </Link>
+            </>
+          ) : (
+            <Link to="/login" className="login">
+              <FaUser className="icon" /> <span>Login</span>
+            </Link>
+          )}
+          {/* <Link to="/login" className="login">
             <FaUser className="icon" /> <span>Login</span>
-          </Link>
+          </Link> */}
           <Link to="/cart" className="cart">
             <FaShoppingCart className="icon" />
             <span className="cart-text">My Cart</span>
@@ -77,6 +102,7 @@ function Header() {
           <li><Link to="/About">About</Link></li>
           <li><Link to="/Cont">Contact Us</Link></li>
           <li><Link to="/Checkout">Checkout</Link></li>
+          <li><Link to="/product">Orders</Link></li>
         </ul>
       </nav>
     </header>

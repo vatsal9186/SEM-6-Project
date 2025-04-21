@@ -1,211 +1,147 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Checkout.css';
 
 const Checkout = () => {
-  const [isDelivery, setIsDelivery] = useState(true);
+  const [total, setTotal] = useState(0);
+  const user = JSON.parse(localStorage.getItem('user'));
+
+  
+
   const [formData, setFormData] = useState({
-    fullName: 'Brandon Johnson',
-    email: 'brandonjohnson@gmail.com',
-    phone: '+1 425 151 2318',
-    country: 'United States',
+    fullName: '',
+    email: '',
+    phone: '',
+    country: 'India',
     city: '',
     state: '',
-    zipCode: ''
+    address: '' // ✅ Added address
   });
 
-  const cartItems = [
-    { 
-      name: 'DuoComfort Sofa Premium', 
-      quantity: 1, 
-      price: 20.00,
-      image: '/path/to/sofa-image.jpg'
-    },
-    { 
-      name: 'IronOne Desk', 
-      quantity: 1, 
-      price: 25.00,
-      image: '/path/to/desk-image.jpg'
-    }
-  ];
+  const [formErrors, setFormErrors] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const calculateTotal = () => {
-    const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const shipping = 5.00;
-    const discount = 10.00;
-    return subtotal + shipping - discount;
+  const validateForm = () => {
+    const errors = {};
+    if (!formData.fullName) errors.fullName = "Full name is required";
+    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) errors.email = "Valid email is required";
+    if (!formData.phone || !/^\+?[0-9\s-]+$/.test(formData.phone)) errors.phone = "Valid phone number required";
+    if (!formData.city) errors.city = "City is required";
+    if (!formData.state) errors.state = "State is required";
+    if (!formData.address) errors.address = "Address is required"; // ✅ Address validation
+    return errors;
   };
+
+  const handleSubmit = (e) => {
+    console.log("hello", formData);
+    e.preventDefault();
+    const errors = validateForm();
+    setFormErrors(errors);
+    if (Object.keys(errors).length === 0) {
+      const cartData = JSON.parse(localStorage.getItem('cartItems'));
+      const productId = cartData.map(item => item._id);
+      try{
+        fetch('http://localhost:5000/api/order/create-order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...formData,
+            productId,
+            userId: user._id,
+            mobile : formData.phone,
+          }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+          localStorage.removeItem('cartItems'); // Clear cart after successful order
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      }
+      catch(err){
+        console.log(err);
+      }
+      alert("Form submitted successfully!");
+    }
+  };
+
+  useEffect(() => {
+    
+    setFormData(prev => ({ ...prev, fullName: user?.fullName || '', email: user?.email || '' , phone: user?.mobile || ''}));
+    const cartData = localStorage.getItem('cartItems');
+    if (cartData) {
+      const parsedCartItems = JSON.parse(cartData);
+      const subtotal = parsedCartItems.reduce((sum, item) => sum + item.price, 0);
+      setTotal(subtotal);
+      console.log(parsedCartItems);
+    }
+  }, []);
 
   return (
     <div className="checkout-container">
       <div className="checkout-wrapper">
-        <h1 className="store-logo">FURNEST</h1>
-        <div className="checkout-progress">
-          <span className="progress-step active">Cart</span>
-          <span className="progress-step active">Review</span>
-          <span className="progress-step current">Checkout</span>
-        </div>
-
         <div className="checkout-content">
           <div className="shipping-section">
-            <h2>Checkout</h2>
-            <div className="shipping-method">
-              <button 
-                className={`method-btn ${isDelivery ? 'active' : ''}`}
-                onClick={() => setIsDelivery(true)}
-              >
-                🚚 Delivery
-              </button>
-              <button 
-                className={`method-btn ${!isDelivery ? 'active' : ''}`}
-                onClick={() => setIsDelivery(false)}
-              >
-                🏢 Pick up
-              </button>
-            </div>
+            <h2>Complete Your Order</h2>
 
-            <form className="shipping-form">
+            <form className="shipping-form" onSubmit={handleSubmit} noValidate>
+              {[
+                { label: 'Full Name', name: 'fullName', type: 'text' },
+                { label: 'Email Address', name: 'email', type: 'email' },
+                { label: 'Phone Number', name: 'phone', type: 'tel' }
+              ].map(({ label, name, type }) => (
+                <div className="form-group" key={name}>
+                  <label>{label} *</label>
+                  <input type={type} name={name} value={formData[name]} onChange={handleInputChange} />
+                  {formErrors[name] && <span className="error">{formErrors[name]}</span>}
+                </div>
+              ))}
+
+              {/* ✅ Address field added */}
               <div className="form-group">
-                <label>Full Name *</label>
+                <label>Address *</label>
                 <input
                   type="text"
-                  name="fullName"
-                  value={formData.fullName}
+                  name="address"
+                  value={formData.address}
                   onChange={handleInputChange}
-                  required
                 />
-              </div>
-
-              <div className="form-group">
-                <label>Email address *</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Phone number *</label>
-                <div className="phone-input">
-                  <select className="country-code">
-                    <option>🇺🇸 +1</option>
-                  </select>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label>Country *</label>
-                <select 
-                  name="country"
-                  value={formData.country}
-                  onChange={handleInputChange}
-                >
-                  <option>United States</option>
-                  <option>Canada</option>
-                  <option>United Kingdom</option>
-                </select>
+                {formErrors.address && <span className="error">{formErrors.address}</span>}
               </div>
 
               <div className="address-group">
-                <div className="form-group">
-                  <label>City</label>
-                  <input
-                    type="text"
-                    name="city"
-                    value={formData.city}
-                    onChange={handleInputChange}
-                    placeholder="Enter city"
-                  />
-                </div>
-                <div className="form-group">
-                  <label>State</label>
-                  <input
-                    type="text"
-                    name="state"
-                    value={formData.state}
-                    onChange={handleInputChange}
-                    placeholder="Enter state"
-                  />
-                </div>
-                <div className="form-group">
-                  <label>ZIP Code</label>
-                  <input
-                    type="text"
-                    name="zipCode"
-                    value={formData.zipCode}
-                    onChange={handleInputChange}
-                    placeholder="Enter ZIP code"
-                  />
-                </div>
+                {['city', 'state'].map(field => (
+                  <div className="form-group" key={field}>
+                    <label>{field[0].toUpperCase() + field.slice(1)} *</label>
+                    <input type="text" name={field} value={formData[field]} onChange={handleInputChange} />
+                    {formErrors[field] && <span className="error">{formErrors[field]}</span>}
+                  </div>
+                ))}
               </div>
 
-              <div className="terms-agreement">
-                <input type="checkbox" id="terms" required />
-                <label htmlFor="terms">I have read and agree to the Terms and Conditions</label>
-              </div>
+              <button type="submit" className="pay-now-btn">Place Order</button>
             </form>
           </div>
 
-          <div className="cart-section">
-            <h2>Review your cart</h2>
-            {cartItems.map((item, index) => (
-              <div key={index} className="cart-item">
-                <img src={item.image} alt={item.name} className="item-image" />
-                <div className="item-details">
-                  <span className="item-name">{item.name}</span>
-                  <span className="item-quantity">1x</span>
-                  <span className="item-price">${item.price.toFixed(2)}</span>
-                </div>
-              </div>
-            ))}
-
-            <div className="cart-summary">
-              <div className="summary-row">
-                <span>Subtotal</span>
-                <span>$45.00</span>
-              </div>
-              <div className="summary-row">
-                <span>Shipping</span>
-                <span>$5.00</span>
-              </div>
-              <div className="summary-row discount">
-                <span>Discount</span>
-                <span>-$10.00</span>
-              </div>
-              <div className="summary-row total">
-                <span>Total</span>
-                <span>${calculateTotal().toFixed(2)}</span>
+          <div className="order-summary">
+            <h3>Your Order</h3>
+            <div className="order-items">
+              <div className="order-item">
+                {/* Placeholder for product items */}
               </div>
             </div>
-
-            <div className="discount-input">
-              <input type="text" placeholder="Discount code" />
-              <button>Apply</button>
-            </div>
-
-            <button className="pay-now-btn">Pay Now</button>
-
-            <div className="secure-checkout">
-              🔒 Secure Checkout - SSL Encrypted
-              <p>Ensuring your financial and personal details are secure during every transaction.</p>
+            <div className="order-summary-total">
+              <strong>Total</strong>
+              <strong>Rs.{total}</strong>
             </div>
           </div>
         </div>

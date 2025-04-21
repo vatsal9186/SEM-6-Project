@@ -12,6 +12,9 @@ import Cont from './Pages/Contactus/Contact/Cont';
 import Products from './Pages/Products';
 import MainCheckout from './Pages/CheckOut/MainCheckout';
 import Regi from './Pages/Login/Regi';
+import Login from './Pages/Login/Login';
+import Cart from './Pages/Cart/Cart';
+import Displayorder from './Pages/productdisplay/display';
 
 
 
@@ -30,10 +33,11 @@ function App() {
     <Router>
       <Header />
       <Routes>
+        
         <Route path='/' element={<Home />} />
         <Route path='/About' element={<About />} />
         <Route path='/Laptops' element={<ShopCategory category="Laptops" />} />
-        <Route path='/Mobile' element={<ShopCategory category="Mobile"/> } />
+        <Route path='/Mobiles' element={<ShopCategory category="Mobiles"/> } />
         <Route path='/TV' element={<ShopCategory category="TV"/> } />
         <Route path='/AC' element={<ShopCategory category="AC"/> } />
         <Route path='/Wash' element={<ShopCategory category="Wash"/> } />
@@ -41,7 +45,11 @@ function App() {
         <Route path="/Cont" element={<Contact />}  />
         <Route path="/Product/:productId" element={<Products />} />
         <Route path='/Checkout' element={< MainCheckout/>} />
-        <Route path='/Login' element={<Regi />} />
+        <Route path='/Registration' element={<Regi />} />
+        <Route path='/Login' element={<Login/>} />
+        <Route path="/Cart" element={<Cart />} />
+        <Route path="/product" element={<Displayorder />} />
+
       </Routes>
       <Footer />
     </Router>
