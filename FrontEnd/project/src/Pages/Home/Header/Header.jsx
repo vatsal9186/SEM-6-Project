@@ -102,7 +102,7 @@ function Header() {
           <li><Link to="/About">About</Link></li>
           <li><Link to="/Cont">Contact Us</Link></li>
           <li><Link to="/Checkout">Checkout</Link></li>
-          <li><Link to="/product">Orders</Link></li>
+          {/* <li><Link to="/product">Orders</Link></li> */}
         </ul>
       </nav>
     </header>

@@ -7,8 +7,6 @@ const Checkout = () => {
   const [total, setTotal] = useState(0);
   const user = JSON.parse(localStorage.getItem('user'));
 
-  
-
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -16,7 +14,7 @@ const Checkout = () => {
     country: 'India',
     city: '',
     state: '',
-    address: '' // ✅ Added address
+    address: ''
   });
 
   const [formErrors, setFormErrors] = useState({});
@@ -33,19 +31,19 @@ const Checkout = () => {
     if (!formData.phone || !/^\+?[0-9\s-]+$/.test(formData.phone)) errors.phone = "Valid phone number required";
     if (!formData.city) errors.city = "City is required";
     if (!formData.state) errors.state = "State is required";
-    if (!formData.address) errors.address = "Address is required"; // ✅ Address validation
+    if (!formData.address) errors.address = "Address is required";
     return errors;
   };
 
   const handleSubmit = (e) => {
-    console.log("hello", formData);
     e.preventDefault();
     const errors = validateForm();
     setFormErrors(errors);
+
     if (Object.keys(errors).length === 0) {
       const cartData = JSON.parse(localStorage.getItem('cartItems'));
       const productId = cartData.map(item => item._id);
-      try{
+      try {
         fetch('http://localhost:5000/api/order/create-order', {
           method: 'POST',
           headers: {
@@ -55,28 +53,31 @@ const Checkout = () => {
             ...formData,
             productId,
             userId: user._id,
-            mobile : formData.phone,
+            mobile: formData.phone,
           }),
         })
-        .then(response => response.json())
-        .then(data => {
-          console.log('Success:', data);
-          localStorage.removeItem('cartItems'); // Clear cart after successful order
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
-      }
-      catch(err){
+          .then(response => response.json())
+          .then(data => {
+            console.log('Success:', data);
+            localStorage.removeItem('cartItems'); // Clear cart
+            alert("Order Placed!"); // ✅ Alert updated
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+      } catch (err) {
         console.log(err);
       }
-      alert("Form submitted successfully!");
     }
   };
 
   useEffect(() => {
-    
-    setFormData(prev => ({ ...prev, fullName: user?.fullName || '', email: user?.email || '' , phone: user?.mobile || ''}));
+    setFormData(prev => ({
+      ...prev,
+      fullName: user?.fullName || '',
+      email: user?.email || '',
+      phone: user?.mobile || ''
+    }));
     const cartData = localStorage.getItem('cartItems');
     if (cartData) {
       const parsedCartItems = JSON.parse(cartData);
@@ -106,7 +107,6 @@ const Checkout = () => {
                 </div>
               ))}
 
-              {/* ✅ Address field added */}
               <div className="form-group">
                 <label>Address *</label>
                 <input
@@ -132,18 +132,7 @@ const Checkout = () => {
             </form>
           </div>
 
-          <div className="order-summary">
-            <h3>Your Order</h3>
-            <div className="order-items">
-              <div className="order-item">
-                {/* Placeholder for product items */}
-              </div>
-            </div>
-            <div className="order-summary-total">
-              <strong>Total</strong>
-              <strong>Rs.{total}</strong>
-            </div>
-          </div>
+          {/* Optional order summary UI can be re-enabled later */}
         </div>
       </div>
     </div>

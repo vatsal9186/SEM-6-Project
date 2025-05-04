@@ -87,10 +87,10 @@ const Login = () => {
           <p className="signup-link">
             Dont have an account? <a href="/Registration">Sign up</a>
           </p>
-          <p className="a-login">
+          {/* <p className="a-login">
            <span className='SPAN'> Admin Login?</span>
             <a href="/admin-login">A_login</a>
-          </p>
+          </p> */}
         </form>
       </div>
     </div>

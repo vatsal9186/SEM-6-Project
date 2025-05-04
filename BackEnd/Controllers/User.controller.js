@@ -13,7 +13,6 @@ export const userRegister = async (req, res) => {
             email,
             mobile,
             password,
-            // confirmPassword,
         });
 
         newUser.save()
@@ -52,3 +51,31 @@ export const userLogin = async (req, res) => {
     }
 
 }
+
+export const userlist = async (req, res) => {
+    try{
+        const all = await User.find({});
+        return res.status(200).json({message: "success", data: all})
+    }
+    catch(error){
+        console.error("Error", error)
+        return res.status(500).json({message: "Interval server error"})
+    }
+}
+
+export const userDelete = async (req, res) => {
+    const {id} = req.body;
+
+    try{
+        const user = await User.findByIdAndDelete(id);
+        if(!user){
+            return res.status(400).json({message: "User not found"})
+        }
+        return res.status(200).json({message: "User deleted successfully"})
+    }
+    catch(error){
+        console.error("error", error)
+        return res.status(500).json({message: "Internal server error"})
+    }
+}
+

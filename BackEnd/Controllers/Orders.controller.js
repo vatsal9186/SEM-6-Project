@@ -48,3 +48,16 @@ export const getOrderById = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
+export const  listOrders = async (req,res)=>{
+  try {
+    const orders = await Orderinfo.find({})
+    return res.json({success:true,data:orders})
+  } catch (error) {
+    console.log(error);
+    return res.json({success:false,msg:"error"})
+    
+  }
+}
+
+

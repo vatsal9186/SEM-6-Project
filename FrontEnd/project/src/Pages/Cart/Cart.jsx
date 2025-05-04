@@ -5,32 +5,7 @@ import { FaTrash } from 'react-icons/fa';
 import { Items } from '../../Components/items/Items';
 import { useNavigate } from 'react-router-dom';
 
-const cartItems = [
-  {
-    id: 1,
-    name: 'Gradient Graphic T-shirt',
-    size: 'Large',
-    color: 'White',
-    price: 145,
-    image: 'https://via.placeholder.com/80x80.png?text=T-shirt',
-  },
-  {
-    id: 2,
-    name: 'Checkered Shirt',
-    size: 'Medium',
-    color: 'Red',
-    price: 180,
-    image: 'https://via.placeholder.com/80x80.png?text=Shirt',
-  },
-  {
-    id: 3,
-    name: 'Skinny Fit Jeans',
-    size: 'Large',
-    color: 'Blue',
-    price: 240,
-    image: 'https://via.placeholder.com/80x80.png?text=Jeans',
-  },
-];
+
 
 const Cart = () => {
   

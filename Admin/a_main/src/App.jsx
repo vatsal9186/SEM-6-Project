@@ -1,20 +1,16 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Side from "./Components/Side";
-import AddCategory from "./Components/All Category/AddCategory";
-import Second from "./Components/All Category/Second";
-import Sidebar from "./Components/SideBar/SideBar";
+import Auth from "./Components/AUTHENTICATION/Auth";
+import Dashboard from "./Components/Dashboard/Dashboard";
+// import Login from "./Components/LoginForm/Login";
+
 
 function App() {
   return (
     <>
-      <Router>
-        <Side />
-        <Routes>
-          <Route path="/addcategory" element={<AddCategory />} />
-          <Route Path='/manageproduct' element={<Second/>} />
-        </Routes>
-      </Router>
+       <Auth />
+      <Dashboard />
+
+      {/* <Login/> */}
     </>
   );
 }
